@@ -1,0 +1,93 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>My first Leaflet</title>
+  <!---Link leaflet css and javascript--->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+</head>
+<body>
+<center><h1 style="color: purple;">สถานที่ท่องเที่ยวจังหวัด สุพรรณบุรี🚙🚕🚗ツ</h1></center>
+  <body bgcolor ='6699FF'>
+
+  <center><div id="map" style="width: 800px; height: 600px"></div> </center>
+  <!--- set center and Link map--->
+<script>
+
+  var map = L.map('map').setView([14.449168951509977, 99.95238060797065],16);
+  mapLink ='<a href="http://openstreetmap.org">OpenStreetMap</a>';
+  L.tileLayer(
+    'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+     attribution: 'Map data &copy; ' + mapLink,
+     maxZoom: 18,
+    }).addTo(map);
+    var greenIcon = L.icon({
+    iconUrl: 'https://o.remove.bg/downloads/0c34c90e-b219-4eb5-8fda-1f5d1cd0e67f/car_icon-removebg-preview.png',
+
+
+    iconSize:     [70, 40], // size of the icon
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+    var marker = L.marker([14.478993782545395, 100.11121087949887],
+  {
+    icon: greenIcon,
+    draggable:true,
+    title:'อุทยานมังกรสวรรค์',
+    opacity:1.5
+  }
+)
+  .addTo(map)
+  .bindPopup("<b>อุทยานมังกรสวรรค์</b>")
+  .openPopup();
+  var marker = L.marker([14.373733175100947, 99.86837959369998],
+{
+  icon: greenIcon,
+  draggable:true,
+  title:'แกะสลักพระใหญุ่',
+  opacity:1.5
+}
+)
+.addTo(map)
+.bindPopup("<b>แกะสลักพระใหญ่</b>")
+.openPopup();
+var marker = L.marker([14.404374021345072, 100.13323234053661],
+{
+icon: greenIcon,
+draggable:true,
+title:'ตลาดเก้าห้อง',
+opacity:1.5
+}
+)
+.addTo(map)
+.bindPopup("<b>ตลาดเก้าห้อง</b>")
+.openPopup();
+var marker = L.marker([14.755765389899766, 100.09509481170657],
+{
+icon: greenIcon,
+draggable:true,
+title:'ตลาดสามชุกุ',
+opacity:1.5
+}
+)
+.addTo(map)
+.bindPopup("<b>ตลาดสามชุก</b>")
+.openPopup();
+var marker = L.marker([14.231147477488722, 100.05431469635471],
+{
+icon: greenIcon,
+draggable:true,
+title:'หอชมทุ่งต้นตาล',
+opacity:1.5
+}
+)
+.addTo(map)
+.bindPopup("<b>หอชมทุ่งต้นตาล</b>")
+.openPopup();
+
+
+</script>
+</body>
+</html>
